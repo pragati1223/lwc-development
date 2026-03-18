@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="public parent cmp">
+        <lightning-input 
+            label="search checkbox" 
+            type="search"
+            onchange={inputchangehandler}>
+        </lightning-input>
+
+        <lightning-button 
+            label="click here" 
+            onclick={clickHandler}>
+        </lightning-button>
+
+        <!-- CHILD COMPONENT MUST BE PRESENT -->
+        <c-creation-of-method-c></c-creation-of-method-c>
+
+    </lightning-card>
+</template>

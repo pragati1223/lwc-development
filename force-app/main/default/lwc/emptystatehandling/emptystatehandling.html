@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Empty State Handling">
+
+        <div class="slds-m-around_medium">
+
+            <template if:true={hascontacts}>
+                <template for:each={contacts} for:item="cont">
+
+                    <div key={cont.id}>
+                        <p><strong>Name:</strong> {cont.name}</p>
+                        <p><strong>Email:</strong> {cont.email}</p>
+                        <p><strong>Phone:</strong> {cont.phone}</p>
+                    </div>
+
+                </template>
+            </template>
+
+            <template if:false={hascontacts}>
+                <p class="slds-text-color_weak slds-align_absolute-center">
+                    No Records Found
+                </p>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>

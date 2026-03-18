@@ -1,0 +1,29 @@
+<template>
+  <lightning-card title="Section with Conditional Rendering">
+      <!--Action Button-->
+      <div class="slds-m-around_medium">
+          <lightning-button label={buttonLabel} variant="brand" onclick={toggleSection}>
+
+          </lightning-button>
+      </div>
+
+      <!--Expanded Section-->
+      <template if:true={showSection}>
+          <div class="slds-box slds-m-around_medium">
+            <p><strong>Account Details</strong></p>
+            <p>Account Name:ABC Corp</p>
+            <p>Industry:IT Service</p>
+            <p>Phone: 1234567891</p>
+            <p>Billig City:Hyderabad</p>
+            <p>Rating:Hot</p>
+            </div>
+            </template>
+
+            <template if:false={showSection}>
+                <p class="slds-m-around_medium">
+                    Click <strong>View more details</strong> To see additional account details
+                </p>
+            </template>
+            </lightning-card>
+      
+</template>

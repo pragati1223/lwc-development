@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg" onclick={tileClickHandler}>
+            <!--It is used to display small pieces of information in a tile/card format.-->
+            <lightning-tile label={record.rollNumber}>
+                <p class="slds-truncate" title={record.name}>{record.name}</p>
+                <p class="slds-truncate" title={record.age}>{record.age}</p>
+            </lightning-tile>
+        </div>
+    </lightning-card>
+</template>

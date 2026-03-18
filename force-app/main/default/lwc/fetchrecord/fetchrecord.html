@@ -1,0 +1,63 @@
+
+    <!--<lightning-card title="Record Detail">
+        //if multiple rows is not written then the data will print on single row
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="8" class="slds-p-around_small">-->
+                    <!--if fetchrecordparent has data then render UI it checks does fetchrecordparent exists if yes so does it contain data is yes then for:each loop will work-->
+                <!--<template if:true={FetchrecordParent}>-->
+                    <!--<ul>-->
+                       <!--<template for:each={FetchrecordParent} for:item="student">-->
+                            <!--li creates one list item per student
+                            key-is a special attribute use to identify each record in the list
+                            key is a special attribute required by LWC when using loops.-->
+                            <!--<li key={student.rollNumber}>-->
+                                <!--It calls the child component ,record={student}:Passing Data to Child
+                                ie Parent → send student data → child component
+                                Child component receives it using:@api record;-->
+
+                                <!--event handle-->
+                            <!--    <c-fetchrecdata record={student} ontileclick = {tileSelectHandler}></c-fetchrecdata>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+
+            </lightning-layout-item>
+        <lightning-layout-item size="4">You have Selected:{selectedRecord}</lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>-->
+    <template>
+    <lightning-card title="Record Detail">
+        <!--if multiple rows is not written then the data will print on single row-->
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="8" class="slds-p-around_small">
+                    <!--if fetchrecordparent has data then render UI it checks does fetchrecordparent exists if yes so does it contain data is yes then for:each loop will work-->
+                
+                    <ul>
+                        <template for:each={FetchrecordParent} for:item="student">
+                            <!--li creates one list item per student
+                            key-is a special attribute use to identify each record in the list
+                            key is a special attribute required by LWC when using loops.-->
+                            <li key={student.rollNumber}>
+                                <!--It calls the child component ,record={student}:Passing Data to Child
+                                ie Parent → send student data → child component
+                                Child component receives it using:@api record;-->
+
+                                <!--event handle
+                                ontileclick={tileSelectHandler}
+                                → Parent listens to event from child-->
+                                <!--parent sends data to child record ie parent sends data to child-student-->
+                               <c-fetchrecdata record={student} ontileclick={tileSelectHandler}></c-fetchrecdata>
+                            </li>
+                        </template>
+                    </ul>
+                
+                    <!--Right side panel Takes 4 columns also Displays selected student name-->
+            </lightning-layout-item>
+        <lightning-layout-item size="4">You have Selected:{selectedRecord}</lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
+
+
+

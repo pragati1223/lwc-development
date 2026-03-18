@@ -1,0 +1,20 @@
+<template>
+<lightning-card title="Looping and Iteration">
+<div>Example of for:each Directive</div>
+<template for:each={cityList} for:item="city">
+    <p key={city}>{city}</p>
+</template>
+
+<h1>Example of Iteration directives</h1>
+<template iterator:name={cityList}>
+    <p key={name.value}>{name.value}</p>
+    <template if:true={name.first}>
+        <p key={name.first}>{name.value}</p>
+    </template>
+    <p key={name.value}>{name.last}</p>
+    <template if:true={name.last}>
+        <p key={name.last}>{name.value}</p>
+    </template>
+</template>
+</lightning-card>
+</template>

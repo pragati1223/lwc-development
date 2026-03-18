@@ -1,0 +1,15 @@
+<template>
+     <lightning-card title="child method">
+        <lightning-checkbox-group name="checkbox group"
+            label="checkbox group"
+            </lightning-checkbox-group>
+        <!--options-List of checkbox values-->
+            options={options}
+            <!--value-Which checkbox is selected-->
+            value={value}
+            onchange={handleChange}>
+
+        </lightning-checkbox-group>
+            <p>selected values are: {selectedval}</p>
+    </lightning-card>
+</template>

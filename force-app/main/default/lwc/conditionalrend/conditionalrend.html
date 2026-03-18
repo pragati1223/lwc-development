@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+
+        <div class="slds-box slds-m-around_medium">
+            <template if:true={isAdmin}>
+                <p>Welcome Admin!You have full access</p></template>
+                <template if:false={isAdmin}>
+                    <p>Welcome User!You have limited access</p>
+                </template>
+                </div>
+
+                <div class="slds-m-around-medium">
+                    <lightning-helptext content="buttons to toggle betwee admin and non-admin"></lightning-helptext>
+                    <lightning-button label="Make Admin" onclick={makeAdmin}></lightning-button>
+                    <lightning-button label="Make Non-Admin" onclick={makeNonAdmin} class="slds-m-left-small"></lightning-button>
+                </div>
+
+                
+    </lightning-card>
+</template>
